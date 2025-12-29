@@ -162,7 +162,7 @@ body {
 
 .main {
     height: calc(100% - 140px);
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .main .song-header {
@@ -173,7 +173,7 @@ body {
 
 .cards {
     height: 84%;
-    border: 1px solid orange;
+    /* border: 1px solid orange; */
     /* margin-top: 10px; */
     padding: 10px 40px 10px 40px;
     display: flex;
