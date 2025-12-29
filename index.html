@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="icon" href="/Gallery/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="left">
+        <div class="heading">
+
+            <span class="logo"><img src="Gallery/logo.png" alt="logo"> &nbsp;Spotify
+                <button class="cross-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px"
+                        fill="#fff">
+                        <path
+                            d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                    </svg>
+                </button>
+            </span>
+            <br>
+            <p class="home"><i class="fa-regular fa-house"></i> &nbsp;&nbsp;Home</p>
+            <p class="search"><i class="fa-solid fa-magnifying-glass"></i> &nbsp;&nbsp;Search</p>
+        </div>
+        <div class="library">
+            <p class="playlists"><img src="Gallery/library_icon.png" alt="library-icon"> &nbsp;&nbsp;Your Library</p>
+            <div class="songs">
+                <p><i class="fa-solid fa-music"></i> &nbsp;Aavan Jaavan - Arijit Singh</p>
+                <p><i class="fa-solid fa-music"></i> &nbsp;Tum Se - Sachin Jigar</p>
+                <p><i class="fa-solid fa-music"></i> &nbsp;Mahiye Jinna Sohna - Darshan Raval</p>
+                <p><i class="fa-solid fa-music"></i> &nbsp;Phero Na Najariya - Qala (Tripti Dimri)</p>
+                <p><i class="fa-solid fa-music"></i> &nbsp;Aayat - Arijit Singh (Bajirao Mastani)</p>
+                <p><i class="fa-solid fa-music"></i> &nbsp;Ek Dil Ek Jaan - Shivam Pathak</p>
+                <p><i class="fa-solid fa-music"></i> &nbsp;Closer - Chainsmokers</p>
+                <p><i class="fa-solid fa-music"></i> &nbsp;Treat You Better - Shawn Mendes</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="right">
+        <div class="nav">
+            <div class="left-section">
+                <i class="fa-solid fa-angle-left"></i>
+                <i class="fa-solid fa-angle-right"></i>
+                <button class="menu-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="35px" viewBox="0 -960 960 960" width="35px"
+                        fill="#fff">
+                        <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z" />
+                    </svg>
+                </button>
+            </div>
+            <div class="right-section">
+                <button class="btn">Sign up</button>
+                <button class="btn primary">Log in</button>
+            </div>
+        </div>
+        <div class="main">
+            <p class="song-header">Spotify Playlists</p>
+            <div class="cards">
+                <div id="card1" class="card">
+                    <img src="Gallery/Aavan-Jaavan-poster.jpg" alt="avan-javan-song-poster">
+                    <p class="song-name">Aavan Jaavan</p>
+                    <p class="artist-name">Arijit Singh, Nikhita Gandhi</p>
+                </div>
+                <div id="card2" class="card">
+                    <img src="Gallery/tum-se-poster.jpg" alt="tum-se-song-poster">
+                    <p class="song-name">Tum Se</p>
+                    <p class="artist-name">Sachin Jigar, Raghav Chaitanya, Varun Jain</p>
+                </div>
+                <div id="card3" class="card">
+                    <img src="Gallery/Mahiye-Jinna-Sohna-poster.jpg" alt="Mahiye-Jinna-Sohna-poster">
+                    <p class="song-name">Mahiye Jinna Sohna</p>
+                    <p class="artist-name">Darshan Raval</p>
+                </div>
+                <div id="card4" class="card">
+                    <img src="Gallery/Phero-na-najariya-poster.jpeg" alt="Phero-na-najariya-poster">
+                    <p class="song-name">Phero Na Najariya</p>
+                    <p class="artist-name">Amit Trivedi, Kausar Munik, Sireesha</p>
+                </div>
+                <div id="card5" class="card">
+                    <img src="Gallery/aayat-song-poster.jpg" alt="Aayat-song-poster">
+                    <p class="song-name">Aayat</p>
+                    <p class="artist-name">Arijit Singh, Sanjay Leela Bhansali</p>
+                </div>
+                <div id="card6" class="card">
+                    <img src="Gallery/ek-dil-ek-jaan-poster.jpeg" alt="ek-dil-ek-jaan-poster">
+                    <p class="song-name">Ek Dil Ek Jaan</p>
+                    <p class="artist-name">Shivam Pathak, Sanjay Leela Bhansali</p>
+                </div>
+                <div id="card7" class="card">
+                    <img src="Gallery/closer-poster.jpeg" alt="closer-poster">
+                    <p class="song-name">Closer</p>
+                    <p class="artist-name">Chainsmokers</p>
+                </div>
+                <div id="card8" class="card">
+                    <img src="Gallery/Treat_You_Better-poster.png" alt="ek-dil-ek-jaan-poster">
+                    <p class="song-name">Treat You Better</p>
+                    <p class="artist-name">Shawn Mendes</p>
+                </div>
+            </div>
+        </div>
+        <div class="music-bar">
+            <div class="upper-box">
+                <p class="music-name">Aavan Jaavan</p>
+                <div class="player-control">
+                    <i class="fa-solid fa-backward-step backward"></i>
+                    <i class="fa-solid fa-play play"></i>
+                    <i class="fa-solid fa-pause pause"></i>
+                    <i class="fa-solid fa-forward-step forward"></i>
+                </div>
+                <p class="duration"><span class="mins">00</span>:<span class="secs">00</span>/<span
+                        class="run-time">00:00</span></p>
+            </div>
+            <div class="lower-box">
+                <div class="line">
+                    <div class="ball"></div>
+                </div>
+            </div>
+        </div>
+        <div class="song-box">
+            <button class="song-cross-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" height="30px" viewBox="0 -960 960 960" width="30px" fill="#fff">
+                    <path
+                        d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z" />
+                </svg>
+            </button>
+            <div class="img-box">
+                <img id="img" src="Gallery/Treat_You_Better-poster.png" alt="song-img">
+            </div>
+
+            <div class="song-info">
+                <p class="song-name">Mahiye Jinna Sohna</p>
+                <div class="music-control">
+                    <i class="fa-solid fa-backward-step backward"></i>
+                    <i class="fa-solid fa-play play"></i>
+                    <i class="fa-solid fa-pause pause"></i>
+                    <i class="fa-solid fa-forward-step forward"></i>
+                </div>
+                <p class="duration"><span class="mins2">00</span>:<span class="secs2">00</span>/<span
+                        class="run-time2">00:00</span></p>
+            </div>
+            <div class="control-panel">
+                <i class="fa-solid fa-backward-step backward"></i>
+                <i class="fa-solid fa-play play"></i>
+                <i class="fa-solid fa-pause pause"></i>
+                <i class="fa-solid fa-forward-step forward"></i>
+            </div>
+            <div class="seekbar">
+                <div class="line2">
+                    <div class="ball2"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.6.0/color-thief.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
