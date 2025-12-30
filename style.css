@@ -96,7 +96,7 @@ body {
 }
 
 .songs p:hover {
-    box-shadow: 1px 1px 5px lime;
+    box-shadow: 0px 0px 10px lime;
 }
 
 /* Right section */
@@ -335,11 +335,17 @@ body {
     left: 0;
 }
 
+.glow {
+    box-shadow: 0px 0px 10px red;
+}
+
+
 
 @media (max-width: 430px) {
     .logo .cross-btn {
         display: block;
-        margin-left: 170px;
+        position: fixed;
+        left: 90%;
     }
 
     .left {
@@ -353,11 +359,23 @@ body {
         z-index: 4;
     }
 
+    .left .logo {
+        font-size: 23px;
+    }
+
+    .left p {
+        font-size: 18px;
+    }
+
     .library .songs p {
         height: 55px;
+        width: 80vw;
+        margin: auto;
         margin-top: 15px;
+        font-size: 14px;
         font-weight: 400;
     }
+
 
     .left-section i {
         display: none;
@@ -380,12 +398,29 @@ body {
         height: calc(100% - 152px);
     }
 
-    /* .main .cards {
-        border: 1px solid violet;
-    } */
-    .main .cards div {
+    .cards .card {
+        height: 270px;
+        width: 200px;
+        margin-top: 30px;
+        cursor: default;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .card img {
+        height: 190px;
+        width: 200px;
+    }
+
+    .card .song-name {
+        margin-top: 10px;
+    }
+
+    .card .artist-name {
+        margin-top: 15px;
+        font-size: 13px;
+        font-weight: 500;
+        color: #ddd5d5;
     }
 
     .right .music-bar {
@@ -443,13 +478,14 @@ body {
     }
 }
 
-@media (min-width: 430.5px) and (max-width: 541px) {
+@media (min-width: 430.5px) and (max-width: 882px) {
     .logo .cross-btn {
         display: block;
         margin-left: 170px;
     }
+
     .left {
-        width: 97vw;
+        width: 360px;
         position: fixed;
         top: 50%;
         left: -100%;
@@ -458,22 +494,39 @@ body {
         /* background-color: white; */
         z-index: 4;
     }
+
+    .left-section i {
+        display: none;
+    }
+
+    .left-section .menu-btn {
+        display: block;
+    }
+
     .right {
         width: 98vw;
+        margin: auto;
     }
+
     .cards {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 0px;
+        padding-right: 0px;
+        /* border: 1px solid blue; */
     }
+
+    .cards .card {
+        margin: auto;
+        margin-top: 15px;
+    }
+
     .right .music-bar {
         margin-top: 13.5px;
     }
+
     .song-box {
-        /* background-color: red; */
         width: 95%;
         height: 87.3%;
-        /* position: fixed; */
-        top: 56%;
+        top: 200%;
         left: 50%;
         transform: translate(-50%, -50%);
     }
