@@ -182,6 +182,9 @@ for (let btn of forwardBtn) {
             ball.style.left = percent + "%";
             ball2.style.left = percent + "%";
         };
+        for (let song of musicArray) {
+            song.classList.remove("glow");
+        }
         songs[currSong].play();
     });
 }
@@ -209,6 +212,9 @@ for (let btn of backwardBtn) {
             ball.style.left = percent + "%";
             ball2.style.left = percent + "%";
         };
+        for (let song of musicArray) {
+            song.classList.remove("glow");
+        }
         songs[currSong].play();
     });
 }
