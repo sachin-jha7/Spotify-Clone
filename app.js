@@ -106,6 +106,10 @@ for (let btn of pauseBtn) {
         }
         songs[currSong].pause();
 
+        for (let song of musicArray) {
+            song.classList.remove("glow");
+        }
+
     });
 }
 
@@ -210,8 +214,6 @@ for (let btn of backwardBtn) {
 }
 
 
-loadSongs(currSong);
-
 // Side bar animation
 
 let sideBar = document.querySelector(".left");
@@ -219,11 +221,14 @@ let menuBtn = document.querySelector(".menu-btn");
 let crossBtn = document.querySelector(".cross-btn");
 
 menuBtn.addEventListener("click", () => {
-
-    sideBar.style.left = "50%";
+    if (window.innerWidth <= 430) {
+        sideBar.style.left = "50%";
+    } else {
+        sideBar.style.left = "183px";
+    }
 });
-crossBtn.addEventListener("click", () => {
 
+crossBtn.addEventListener("click", () => {
     sideBar.style.left = "-100%";
 });
 
@@ -312,71 +317,50 @@ for (let card of allCards) {
         }
         if (window.innerWidth < 430.5) {
             songBox.style.top = "55%";
+        } else if (window.innerWidth > 430 && window.innerWidth < 883) {
+            songBox.style.top = "56%";
         }
         else {
             songBox.style.top = "12%";
         }
 
         if (cardId == "card1") {
-
             currSong = 0;
             updateDuration(0);
             loadSongs(0);
             changeSongName(0);
-
             songs[0].play();
         } else if (cardId == "card2") {
-
             currSong = 1;
-
-
             updateDuration(1);
             loadSongs(1);
             changeSongName(1);
-
             songs[1].play();
         } else if (cardId == "card3") {
-
             currSong = 2;
-
-
             updateDuration(2);
             loadSongs(2);
             changeSongName(2);
-
             songs[2].play();
         } else if (cardId == "card4") {
-
             currSong = 3;
-
-
             updateDuration(3);
             loadSongs(3);
             changeSongName(3);
-
             songs[3].play();
         } else if (cardId == "card5") {
-
             currSong = 4;
-
             updateDuration(4);
             loadSongs(4);
             changeSongName(4);
-
             songs[4].play();
         } else if (cardId == "card6") {
-
             currSong = 5;
-
-
             updateDuration(5);
-
             loadSongs(5);
             changeSongName(5);
-
             songs[5].play();
         } else if (cardId == "card7") {
-
             currSong = 6;
             updateDuration(6);
             loadSongs(6);
@@ -397,7 +381,112 @@ songCrossBtn.addEventListener("click", () => {
     if (window.innerWidth < 430.5) {
         songBox.style.top = "200%";
     }
+    else if (window.innerWidth > 430 && window.innerWidth < 883) {
+        songBox.style.top = "200%";
+    }
     else {
         songBox.style.top = "100%";
     }
 });
+
+// library box click event management
+
+let musicBtn = document.querySelectorAll(".song");
+
+let musicArray = Array.from(musicBtn);
+
+for (let btn of musicBtn) {
+    btn.addEventListener("click", () => {
+
+        let songId = btn.getAttribute("id");
+
+        for (let song of songs) {
+            song.pause();
+            song.currentTime = 0;
+        }
+        for (let song of musicArray) {
+            song.classList.remove("glow");
+        }
+
+        for (let BTN of pauseBtn) {
+            BTN.style.display = "inline-block";
+        }
+        for (let PlBTN of playBtn) {
+            PlBTN.style.display = "none";
+        }
+        if (window.innerWidth < 430.5) {
+            songBox.style.top = "55%";
+        } else if (window.innerWidth > 430 && window.innerWidth < 883) {
+            songBox.style.top = "56%";
+        } else {
+            songBox.style.top = "12%";
+        }
+
+        if (songId == "song1") {
+            currSong = 0;
+            updateDuration(0);
+            loadSongs(0);
+            changeSongName(0);
+            songs[0].play();
+            boxAnimation(musicArray[0]);
+        } else if (songId == "song2") {
+            currSong = 1;
+            updateDuration(1);
+            loadSongs(1);
+            changeSongName(1);
+            songs[1].play();
+            boxAnimation(musicArray[1]);
+        } else if (songId == "song3") {
+            currSong = 2;
+            updateDuration(2);
+            loadSongs(2);
+            changeSongName(2);
+            songs[2].play();
+            boxAnimation(musicArray[2]);
+        } else if (songId == "song4") {
+            currSong = 3;
+            updateDuration(3);
+            loadSongs(3);
+            changeSongName(3);
+            songs[3].play();
+            boxAnimation(musicArray[3]);
+        } else if (songId == "song5") {
+            currSong = 4;
+            updateDuration(4);
+            loadSongs(4);
+            changeSongName(4);
+            songs[4].play();
+            boxAnimation(musicArray[4]);
+        } else if (songId == "song6") {
+            currSong = 5;
+            updateDuration(5);
+            loadSongs(5);
+            changeSongName(5);
+            songs[5].play();
+            boxAnimation(musicArray[5]);
+        } else if (songId == "song7") {
+            currSong = 6;
+            updateDuration(6);
+            loadSongs(6);
+            changeSongName(6);
+            songs[6].play();
+            boxAnimation(musicArray[6]);
+        } else if (songId == "song8") {
+            currSong = 7;
+            updateDuration(7);
+            loadSongs(7);
+            changeSongName(7);
+            songs[7].play();
+            boxAnimation(musicArray[7]);
+        }
+    })
+}
+
+// Library box animation
+
+let boxAnimation = (box) => {
+    box.classList.add("glow");
+}
+
+
+loadSongs(currSong);
