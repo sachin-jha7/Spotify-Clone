@@ -68,7 +68,7 @@ seekBar.addEventListener("click", (event) => {
 });
 
 let line = document.querySelector(".line2");
-line.addEventListener("click", () => {
+line.addEventListener("click", (event) => {
     let rect = seekBar.getBoundingClientRect();
     const clickX = event.clientX - rect.left;
     const width = rect.width;
@@ -301,8 +301,9 @@ let songName = document.querySelector(".song-info .song-name");
 musicName.addEventListener("click", () => {
     if (window.innerWidth < 430.5) {
         songBox.style.top = "55%";
-    }
-    else {
+    } else if (window.innerWidth > 430 && window.innerWidth < 883) {
+        songBox.style.top = "56%";
+    } else {
         songBox.style.top = "12%";
     }
 });
