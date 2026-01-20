@@ -1,5 +1,6 @@
 
 let songs = [
+    new Audio("EnSongs/Unko-Bhi-Humse-Mohabbat-Ho.mp3"),
     new Audio("Songs/Aavan-Jaavan.mp3"),
     new Audio("Songs/Tum-se.mp3"),
     new Audio("Songs/Mahiye-Jinna-Sohna.mp3"),
@@ -46,7 +47,7 @@ let loadSongs = (currSong) => {
             document.querySelector(".secs2").innerText = `${secs}`;
         }
     });
-    songs[currSong].load();
+    songs[currSong].load(); // may be if system doesn't load song automatically
 };
 
 
@@ -116,41 +117,46 @@ for (let btn of pauseBtn) {
 
 let changeSongName = (currSong) => {
     if (currSong == 0) {
+        musicName.innerText = "Unko Bhi Humse";
+        songName.innerText = "Unko Bhi Humse...";
+        songImg.src = "Gallery/unko-bhi-humse-poster.webp";
+        ShadowEffect();
+    } else if (currSong == 1) {
         musicName.innerText = "Aavan Jaavan";
         songName.innerText = "Aavan Jaavan";
         songImg.src = "Gallery/Aavan-Jaavan-poster.jpg";
         ShadowEffect();
-    } else if (currSong == 1) {
+    } else if (currSong == 2) {
         musicName.innerText = "Tum Se";
         songName.innerText = "Tum Se";
         songImg.src = "Gallery/tum-se-poster.jpg";
         ShadowEffect();
-    } else if (currSong == 2) {
+    } else if (currSong == 3) {
         musicName.innerText = "Mahiye Jinna Sohna";
         songName.innerText = "Mahiye Jinna Sohna";
         songImg.src = "Gallery/Mahiye-Jinna-Sohna-poster.jpg";
         ShadowEffect();
-    } else if (currSong == 3) {
+    } else if (currSong == 4) {
         musicName.innerText = "Phero Na Najariya";
         songName.innerText = "Phero Na Najariya";
         songImg.src = "Gallery/Phero-na-najariya-poster.jpeg";
         ShadowEffect();
-    } else if (currSong == 4) {
+    } else if (currSong == 5) {
         musicName.innerText = "Aayat";
         songName.innerText = "Aayat";
         songImg.src = "Gallery/aayat-song-poster.jpg";
         ShadowEffect();
-    } else if (currSong == 5) {
+    } else if (currSong == 6) {
         musicName.innerText = "Ek Dil Ek Jaan";
         songName.innerText = "Ek Dil Ek Jaan";
         songImg.src = "Gallery/ek-dil-ek-jaan-poster.jpeg";
         ShadowEffect();
-    } else if (currSong == 6) {
+    } else if (currSong == 7) {
         musicName.innerText = "Closer";
         songName.innerText = "Closer";
         songImg.src = "Gallery/closer-poster.jpeg";
         ShadowEffect();
-    } else if (currSong == 7) {
+    } else if (currSong == 8) {
         musicName.innerText = "Treat You Better";
         songName.innerText = "Treat You Better";
         songImg.src = "Gallery/Treat_You_Better-poster.png";
@@ -182,10 +188,10 @@ for (let btn of forwardBtn) {
             ball.style.left = percent + "%";
             ball2.style.left = percent + "%";
         };
+        songs[currSong].play();
         for (let song of musicArray) {
             song.classList.remove("glow");
         }
-        songs[currSong].play();
     });
 }
 
@@ -195,7 +201,7 @@ for (let btn of backwardBtn) {
         songs[currSong].currentTime = 0;
         currSong--;
         if (currSong < 0) {
-            currSong = 7;
+            currSong = 8;
         }
         changeSongName(currSong);
         loadSongs(currSong);
@@ -212,10 +218,10 @@ for (let btn of backwardBtn) {
             ball.style.left = percent + "%";
             ball2.style.left = percent + "%";
         };
+        songs[currSong].play();
         for (let song of musicArray) {
             song.classList.remove("glow");
         }
-        songs[currSong].play();
     });
 }
 
@@ -303,7 +309,8 @@ musicName.addEventListener("click", () => {
         songBox.style.top = "55%";
     } else if (window.innerWidth > 430 && window.innerWidth < 883) {
         songBox.style.top = "56%";
-    } else {
+    }
+    else {
         songBox.style.top = "12%";
     }
 });
@@ -379,6 +386,12 @@ for (let card of allCards) {
             loadSongs(7);
             changeSongName(7);
             songs[7].play();
+        } else if (cardId == "card9") {
+            currSong = 8;
+            updateDuration(8);
+            loadSongs(8);
+            changeSongName(8);
+            songs[8].play();
         }
     })
 }
@@ -429,27 +442,34 @@ for (let btn of musicBtn) {
             songBox.style.top = "12%";
         }
 
-        if (songId == "song1") {
+        if(songId == "song0"){
             currSong = 0;
             updateDuration(0);
             loadSongs(0);
             changeSongName(0);
             songs[0].play();
             boxAnimation(musicArray[0]);
-        } else if (songId == "song2") {
+        } else if (songId == "song1") {
             currSong = 1;
             updateDuration(1);
             loadSongs(1);
             changeSongName(1);
             songs[1].play();
             boxAnimation(musicArray[1]);
-        } else if (songId == "song3") {
+        } else if (songId == "song2") {
             currSong = 2;
             updateDuration(2);
             loadSongs(2);
             changeSongName(2);
             songs[2].play();
             boxAnimation(musicArray[2]);
+        } else if (songId == "song3") {
+            currSong = 3;
+            updateDuration(3);
+            loadSongs(3);
+            changeSongName(3);
+            songs[3].play();
+            boxAnimation(musicArray[3]);
         } else if (songId == "song4") {
             currSong = 3;
             updateDuration(3);
@@ -458,33 +478,33 @@ for (let btn of musicBtn) {
             songs[3].play();
             boxAnimation(musicArray[3]);
         } else if (songId == "song5") {
-            currSong = 4;
-            updateDuration(4);
-            loadSongs(4);
-            changeSongName(4);
-            songs[4].play();
-            boxAnimation(musicArray[4]);
-        } else if (songId == "song6") {
             currSong = 5;
             updateDuration(5);
             loadSongs(5);
             changeSongName(5);
             songs[5].play();
             boxAnimation(musicArray[5]);
-        } else if (songId == "song7") {
+        } else if (songId == "song6") {
             currSong = 6;
             updateDuration(6);
             loadSongs(6);
             changeSongName(6);
             songs[6].play();
             boxAnimation(musicArray[6]);
-        } else if (songId == "song8") {
+        } else if (songId == "song7") {
             currSong = 7;
             updateDuration(7);
             loadSongs(7);
             changeSongName(7);
             songs[7].play();
             boxAnimation(musicArray[7]);
+        } else if (songId == "song8") {
+            currSong = 8;
+            updateDuration(8);
+            loadSongs(8);
+            changeSongName(8);
+            songs[8].play();
+            boxAnimation(musicArray[8]);
         }
     })
 }
@@ -494,6 +514,7 @@ for (let btn of musicBtn) {
 let boxAnimation = (box) => {
     box.classList.add("glow");
 }
+
 
 
 loadSongs(currSong);
