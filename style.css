@@ -531,3 +531,14 @@ body {
         transform: translate(-50%, -50%);
     }
 }
+
+@media (min-width: 882.5px) and (max-width: 1300px) {
+    .cards {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .cards .card {
+        margin: auto;
+        margin-top: 15px;
+    }
+}
